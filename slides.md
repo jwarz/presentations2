@@ -3,28 +3,28 @@
 
 <!-- .slide: data-state="no-toc-progress" --> <!-- don't show toc progress bar on this slide -->
 
-# Organizing Entrepreneurial Teams
+# Digital Capital & Star Performers
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-## A Natural Field Experiment of the Autonomy in Choosing Teams and Ideas
+## The returns to technological talent and investments in IT-related intangible capital
 
 
 <br> 
 
-[Christoph Ihl][1] (joint with Tia Boss & Linus Dahlander)
+[Joschka Schwarz][1]
 
 <br> 
 
 
-2020-01-20 | [MST-Research Seminar Series][2] | TU Hamburg
+2020-02-11 | [MST-Research Seminar Series][2] | TU Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
 
 
-[1]: https://www.startupengineer.io/authors/ihl/
-[2]: https://www.tuhh.de/alt/sdw
+[1]: https://www.startupengineer.io/authors/schwarz/
+<!-- [2]: https://www.tuhh.de/alt/sdw -->
 
 
 ----  ----
