@@ -4,3 +4,9 @@
 [submodule "plugin/reveal.js-menu"]
 	path = plugin/reveal.js-menu
 	url = https://github.com/denehyg/reveal.js-menu
+[submodule "plugin/reveal-pdfexport"]
+	path = plugin/reveal-pdfexport
+	url = https://github.com/McShelby/reveal-pdfexport
+[submodule "plugin/Reveal.js-Title-Footer"]
+	path = plugin/Reveal.js-Title-Footer
+	url = https://github.com/e-gor/Reveal.js-Title-Footer
