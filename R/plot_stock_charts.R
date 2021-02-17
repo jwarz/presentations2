@@ -126,3 +126,34 @@ apple_g_themed <- apple_g_comb +
 
 # 6. Save ----
 ggsave(apple_g_themed, filename = "img/apple_annotated.png",  bg = "transparent", width = 12, height = 10)
+
+
+
+# BEI ---------------------------------------------------------------------
+# NASDAQ ##################################################################
+# 1. Get data -------------------------------------------------------------
+bei_data <- tq_get("BEI.DE", from = "2020-06-01", to = "2021-02-17")
+
+# 2. Plot Data ------------------------------------------------------------
+bei_g <- bei_data %>% 
+  ggplot(aes(x = date, y = adjusted)) +
+  geom_line(color = "#2dc6d6",  size = 1) +
+  tidyquant::theme_tq() +
+  scale_y_continuous(breaks = seq(0, 14000, by = 2000), 
+                     labels = function(x) format(x, big.mark = ".", scientific = FALSE)) +
+  labs(x = "", y = "") 
+nasdaq_g_themed <- nasdaq_g +
+  theme(
+    panel.background = element_rect(fill = "transparent"), 
+    plot.background  = element_rect(fill = "transparent", color = NA),
+    panel.border     = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x      = element_text(color  = "white", size = 20, vjust = -0, angle = 0, face = "bold"),
+    axis.text.y      = element_text(color  = "white", size = 20, hjust = -1.5, face = "bold"),
+    axis.line        = element_line(colour = "grey",  size = 0.3)
+  )
+ggsave(nasdaq_g_themed, filename = "img/nasdaq.png",  bg = "transparent", width = 12, height = 10)
+
+
+
+

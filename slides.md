@@ -36,89 +36,282 @@
 
 <!-- .slide: class="align-top" -->
 
-## Corporate Innovation & Entrepreneurship
+#### Test Page
 
+<style>
+/*Slide Container*/
+.slide-container-2 {
+    width:     100%;
+    height:    100%;
+    display:   flex;
+    flex-wrap: wrap; /*line break the boxes*/
+}
+/*Settings for divisions inside of container*/
+.slide-container-2>* {
+        flex: 1 1 45%; /*grow shrink basis*/
+}
+/*Gap between every other box*/
+.slide-container-2>* + *  { 
+        margin-left: 20px;
+}
+/*Settings for top boxes*/
+.slide-container-2-top {
+    border: 2px solid grey;
+    height:85%;
+}
+/*Settings for bottom boxes*/
+.slide-container-2-bottom {
+    background-color:red; 
+    height:15%;
+}
+/*Settings for Inside (Text) boxes*/
+.box-text {
+  padding:20px;
+}
+/*Settings for Lists*/
+.square-list {
+  list-style: square !important;
+}
+/*Settings for Image in Box*/
+.box-img {
+  margin: 10px;
+  height: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center, center;
+}
+</style>
 
-<img src="img/nasdaq.png"  height="100" width="600">
-
-
-
-
-
-
+<div class="slide-container-2">
+        <div class="slide-container-2-top">
+            <div class="box-img" style="background-image: url(img/apple_annotated.png)">
+            </div>
+        </div>
+        <div class="slide-container-2-top"">
+            <div class="box-text">
+              <ul class="square-list">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+              </ul>
+            </div>
+        </div>
+        <div class="slide-container-2-bottom">Three</div>
+</div>
 
 ----
-
-
 
 <!-- .slide: class="align-top" -->
 
 #### The five most valuable firms in the S&P 500 are all firms from the tech industry (with an especially rapid rise in this fraction in the last few years)
 
 <style>
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
+.flex-container1 {
+    display: flex;
+    height:calc(100% - 250px);
+    width:100%;
+    background-color:red;
 }
-.flex-item {
-  justify-content: center;
-  display: flex;
+.flex-child1 {
+    flex:1; /*sizes the item based on its width/heigh */
+    border: 2px solid grey;
+    background-color:green;
+}  
+.flex-child1:first-child {
+    margin-right: 20px;
+} 
+#imgtest {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
 }
-.flex-item img {
-  cursor: pointer;
-}
+/*li { color: #2dc6d6; }*/
+/*li span { color: white; } */
 </style>
-
-<div class="flex-container images">
-  <div class="flex-item">
-    <figure>
-      <img style="height:475px" src="img/nasdaq.png" >
-      <figcaption style="text-align: center;">NASDAQ</figcaption>
-    </figure>
+<div class="flex-container1">
+  <div class="flex-child1 magenta">
+    <div id="imgtest" class="column divtest">
+    <div style="background: url(img/nasdaq.png) no-repeat center center;
+                    height: 100%; 
+                    width:100%; 
+                    padding-top:750px;
+                    background-size: 650px;">
   </div>
-  <div class="flex-item">
-    <figure>
-      <img style="height:500px;" src="img/apple_annotated.png" >
-      <figcaption style="text-align: center;">Apple</figcaption>
-    </figure>
+  </div>
+  </div>
+  <div class="flex-child1 green">
+   <ul>
+    <li><span>It’s become a truism that corporations must invest in <b>leading-edge digital technologies</b> to move ahead and outpace competitors.</span></li>
+    <li><span>The five <b>most valuable firms</b> in the S&P 500 are all firms from the <b>tech industry</b> (with an especially rapid rise in this fraction in the last few years).</span></li>
+    <li><span>As the economy becomes increasingly digitized, these assets can be expected to grow even further in importance.</span></li>
+  </ul>
   </div>
 </div>
-
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Disentangling Autonomy
+#### Much of the rise in the concentration of power in these firms has been attributed to investments related to digital technologies
+
 <style>
-.wrapper {
+.flex-container {
+    display: flex;
+    width:100%;
+    height:70%;
+}
+.flex-child {
+    flex: 1;
+    border: 2px solid grey;
+    padding:20px;
+    
+}  
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+#imgtest {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+/*li { color: #2dc6d6; }*/
+/*li span { color: white; } */
+</style>
+<div class="flex-container">
+  <div class="flex-child magenta">
+    <div id="imgtest" class="column divtest">
+    <div style="background: url(img/apple_annotated.png) no-repeat center center;
+                    height: 100%; 
+                    width:100%; 
+                    padding-top:750px;
+                    background-size: 650px;">
+  </div>
+  </div>
+  </div>
+  <div class="flex-child green">
+   <ul>
+    <li>
+      <span>Superstar firms, unique in their capabilities to scale up innovations, have become increasingly important in the US economy.</span>
+      <p class="reference">(Autor et al., 2020; Hall, 2018; Van Reenen, 2018; De Loecker et al., 2020)</p>
+    </li>
+    <li><span>The five <b>most valuable firms</b> in the S&P 500 are all firms from the <b>tech industry</b> (with an especially rapid rise in this fraction in the last few years).</span></li>
+    <li><span>As the economy becomes increasingly digitized, these assets can be expected to grow even further in importance.</span></li>
+    <li><span>Goal: Predict future firm-level productivity with digital capital accumulation</span></li>
+  </ul>
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Digital laggards pay the consequences in lost revenue and customers
+
+<style>
+.wrapper2 {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.wrapper div {
-  overflow: hidden;
-}
-.wrapper img {
-  display: block;
-  width: auto;
-  height: 100%;
+  flex-direction: column;
+  align-self: center;
+  height:700px;
 }
 </style>
-<div class="wrapper">
-  <div class="img1">
-    <img src="img/nasdaq.png">
-  </div>
-  <div class="img2">
-    <img src="img/apple_annotated.png">
-  </div>
-  <div>
+<div class="wrapper2">
+    <img src="img/bei.png" >
+    <figcaption style="text-align:center;">Beiersdorf</figcaption>
+<div>
 
+----
 
+<!-- .slide: class="align-top" -->
+
+#### Intangible Assets
+<style>
+.row {
+  display: flex;
+  width: 100%;
+  height: 70%;
+}
+.column {
+  flex: 50%;
+}
+.divtest {
+  height: 630px;
+  position: relative;
+}
+</style>
+
+<div class="row">
+  <div class="column divtest">
+    <div style="background: url(img/tangible.png) no-repeat center center;
+                    height: 100%; 
+                    width:100%; 
+                    padding-top:750px;
+                    background-size: 650px;">
+  </div>
+  </div>
+  <div class="column">
+  <ul>
+      <li><span>For digitally-focused firms, investments in non-tangible assets often account for significantly greater total costs than the technologies themselves</span></li>
+    <li><span>New technologies such as AI and ML enable and require significant complementary investments, including business process redesign, co-invention of new products and business models, and <b>investments in human capital</b></span></li>
+    <li><span>These assets comprise digital intangible capital</span></li>
+    <p class="reference">Hall, 2001; Brynjolfsson et al., 2002</p>
+    <li><span>While these assets take time to build, the market value of firms should reflect the expected net present value of the cash flows they can generate in the future.</span></li>
+  </ul>
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Can Engineers Boost Corporate Value? Accepted accounting principles often fail to capture the value of intangible capital
+
+<style>
+.box_outside {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height:calc(100vh - 100px);
+  width:100%;
+}
+.box_inside {
+  display: flex;
+  width: 100%;
+  margin-bottom:20px;
+  flex-direction: column;
+}
+</style>
+<div class="box_outside">
+  <div class="box_inside">
+    <span>... and what about the value of the engineers and software talent driving these new technologies — can their value be measured, as well?</span>
+    <br>
+  </div>
+  
+  <div class="box_inside">
+    Research Scope – The reason to study this topic is to ...
+    <span><hr></span>
+    <ul style="line-height:1;">
+      <li><span>... measure intangible assets and capital (market value of knowledge / human capital)</span></li>
+      <li><span>... examine how firms make and earn returns to investments in technology / 	technological labour</span></li>
+      <li><span><s>... predict the economic effects of technologies</s></span></li>
+    </ul>
+  </div>
+  
+  <div class="box_inside">
+  <span>Research question</span>
+  <span><hr></span>
+  <ul style="line-height:1;">
+    <li><span>asd</span></li>
+    <li><span>asd</span></li>
+    <li><span>asd</span></li>
+  </ul>
+  </div>
+
+</div>
 
 
 ----
@@ -156,7 +349,7 @@
     <p style="font-size:50px"><b>Reputation</b></p>
     <hr>
     <p style="font-size:28px">The expertise / performance of a developer depends on several factors:</p>
-    <ul style="font-size:28px">
+    <ul style="font-size:28px; margin-left:50px;">
       <li>Quality</li>
       <li>Continuity</li>
       <li>Quantity</li>
@@ -177,7 +370,7 @@
 </div>
 <div class="col-md-6 quarter">
   <div id="imgBox">
-        <div style="background: url(img/graph.png) no-repeat center center;
+        <div style="background: url(img/commit.png) no-repeat center center;
                     box-shadow: 10px 5px 5px grey;
                     height: 100%; 
                     width:100%; 
@@ -189,11 +382,11 @@
 </div>
 <div class="col-md-6 quarter">
   <div id="imgBox">
-  <div style="background: url(img/commit.png) no-repeat center center;
+  <div style="background: url(img/graph.webp) no-repeat center center;
                     box-shadow: 10px 5px 5px grey;
                     height: 100%; 
                     width:100%; 
-                    background-size: 300px; 
+                    background-size: 500px; 
                     border:2px 
                     solid grey;">
   </div>
@@ -210,25 +403,144 @@
 
 <!-- .slide: class="align-top" -->
 
-## Autonomy in Choosing Teams
+## Box testing row
 
 <style>
-.quarter{
-  width:50%;
+.quarter_l{
+  width:20%;
   height:100%;
   float:left;
 }
-.contents{
-  height:32vh;
+.contents_l{
+  height:64vh;
   width:100%;
 }
 </style>
 
-<div class="contents">
-    <div class="col-md-6 quarter" style="background-color:blue;">test</div>
-    <div class="col-md-6 quarter" style="background-color:red;">test</div>
-    <div class="col-md-6 quarter" style="background-color:yellow;">test</div>
-    <div class="col-md-6 quarter" style="background-color:green;">test</div>
+<div class="contents_l">
+    <div class="col-md-6 quarter_l">
+      <div id="imgBox" style="display: flex;
+                              justify-content: flex-end;
+                              flex-direction: column;">
+        <div style="background: url(img/readme.png) no-repeat center center;
+                    box-shadow: 10px 5px 5px grey;
+                    height: 100%; 
+                    width:100%; 
+                    background-size: 200px; 
+                    border:2px 
+                    solid grey;">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 quarter_l">
+      <div id="imgBox" style="display: flex;
+                              justify-content: flex-end;
+                              flex-direction: column;">
+            <div style="box-shadow: 10px 5px 5px grey;
+                        height: 100%; 
+                        margin-bottom:10px;
+                        padding:10px 0 10px 0;
+                        width:100%; 
+                        background-size: 150px; 
+                        border:2px 
+                        solid grey;">
+                        <img data-src="img/heuristic.png"  height="10%" width="40%" style=" margin-left: auto;margin-right: auto;display: block;">
+                        <figcaption style="text-align:center;">Statistical Features</figcaption>
+                        <img data-src="img/stat_feat.png"  height="10%" width="40%" style=" margin-left: auto;margin-right: auto;display: block;">
+                        <figcaption style="text-align:center;">Heuristic features</figcaption>
+            </div>
+            <div style="box-shadow: 10px 5px 5px grey;
+                        height: 100%; 
+                        margin-top:10px;
+                        width:100%; 
+                        border:2px 
+                        solid grey;
+                        display:flex; 
+                        align-items:center;
+                        justify-content: center;
+                        flex-direction:column;
+                        text-align: center;">
+                          <span>Data Extraction</span>
+            </div>
+      </div>
+    </div>
+    <div class="col-md-6 quarter_l">
+          <div id="imgBox" style="display: flex;
+                              justify-content: flex-end;
+                              flex-direction: column;">
+            <div style="box-shadow: 10px 5px 5px grey;
+                        height: 100%; 
+                        margin-bottom:10px;
+                        padding:10px 0 10px 0;
+                        width:100%; 
+                        background-size: 150px; 
+                        border:2px 
+                        solid grey;">
+                        <img data-src="img/brain.png"  height="10%" width="50%" style=" margin-left: auto;margin-right: auto;display: block;">
+                        <figcaption style="text-align:center;">Classifier Learning</figcaption>
+            </div>
+            <div style="box-shadow: 10px 5px 5px grey;
+                        height: 100%; 
+                        margin-top:10px;
+                        width:100%; 
+                        border:2px 
+                        solid grey;
+                        display:flex; 
+                        align-items:center;
+                        justify-content: center;
+                        flex-direction:column;
+                        text-align: center;">
+                          <span>Learn LDA /</span>
+                          <span>Run LDA</span>
+            </div>
+      </div>
+    </div>
+    <div class="col-md-6 quarter_l">
+              <div id="imgBox" style="display: flex;
+                              justify-content: flex-end;
+                              flex-direction: column;">
+            <div style="box-shadow: 10px 5px 5px grey;
+                        height: 100%; 
+                        margin-bottom:10px;
+                        padding:10px 0 10px 0;
+                        width:100%; 
+                        background-size: 150px; 
+                        border:2px 
+                        solid grey;">
+                        <img data-src="img/validation.png"  height="10%" width="30%" style=" margin-left: auto;margin-right: auto;display: block;">
+                        <figcaption style="text-align:center;">Validation</figcaption>
+            </div>
+            <div style="box-shadow: 10px 5px 5px grey;
+                        height: 100%; 
+                        margin-top:10px;
+                        width:100%; 
+                        border:2px 
+                        solid grey;
+                        display:flex; 
+                        align-items:center;
+                        justify-content: center;
+                        flex-direction:column;
+                        text-align: center;">
+                          <span>Topics /</span>
+                          <span>Manual Analysis</span>
+            </div>
+      </div>
+    </div>
+        <div class="col-md-6 quarter_l">
+      <div id="imgBox" style="display: flex;
+                              justify-content: flex-end;
+                              flex-direction: column;">
+        <div style="box-shadow: 10px 5px 5px grey;
+                    height:100%;
+                    width:100%; 
+                    border:2px 
+                    solid grey;
+                    display:flex; 
+                    align-items:center;
+                    justify-content: center;">Categories
+        </div>
+      </div>
+    </div>
 </div>
 
 ----
@@ -247,12 +559,7 @@
 </style>
 
 
-<div style="height:100vh;
-            width: 100%; 
-            margin-bottom:15vh;
-            background-color:red";>
-</div>
-
+<img data-src="img/test.webp"  height="100" width="800">
             
 
 
@@ -262,68 +569,6 @@
 
 ## Autonomy in Choosing *Both* Teams and Ideas
 
-<img data-src="img/both.png"  height="100" width="800">
-<br>
-
-<div style="height: 100%; 
-            width: 100%; 
-            background-color:red;
-            display: block;
-            overflow: auto;
-            max-height: 700px;"></div>
-
-<div class="row-top">
-
-
-<div class="column">
-
-#### Complements
-
-* Exploration space of ideas & skills becomes larger
-
-  (Hackmann, 2002)<!-- .element: class="reference" --> 
-
-* "Collective ownership" around one's idea more likely to develop among familiar teammates
-
-  (Gray et al., 2020)<!-- .element: class="reference" -->
-
-
-
-
-
-
-
-</div>
-
-
-<div class="column">
-
-#### Substitutes
-
-* Self-selected teams lack cognitive diversity to elaborate novel ideas
-
-  (Shin et al., 2012)<!-- .element: class="reference" --> 
-
-* Self-selected teams and ideas as "quick wins" lead to confidence and complacency too early
-
-  (Gist, 1987, Sitkin 1992, Lindsley et al., 1995, Knight et al., 2001, Goncalo et al., 2010, Rapp et al., 2014)<!-- .element: class="reference" --> 
-
-
-
-
-
-</div>
-
-</div>
-
-<div class="fragment" />
-
-<br>
-
-> Hypothesis 3:
-> The autonomy in choice of team and ideas are (a) complementary or (b) substitutes on entrepreneurial team performance.
-
-
 
 
 ----  ----
@@ -331,6 +576,8 @@
 <!-- .slide: class="align-center" -->
 
 # Methods
+
+<img data-src="img/tangible.png"  height="50%" >
 
 ----
 
