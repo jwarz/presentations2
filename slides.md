@@ -57,12 +57,12 @@
 /*Settings for top boxes*/
 .slide-container-2-top {
     border: 2px solid grey;
-    height:85%;
+    height:80%;
 }
 /*Settings for bottom boxes*/
 .slide-container-2-bottom {
     background-color:red; 
-    height:15%;
+    height:20%;
 }
 /*Settings for Inside (Text) boxes*/
 .box-text {
@@ -83,10 +83,12 @@
 </style>
 
 <div class="slide-container-2">
+        <!--- Box No. 1 (Left) --->
         <div class="slide-container-2-top">
             <div class="box-img" style="background-image: url(img/apple_annotated.png)">
             </div>
         </div>
+        <!--- Box No. 2 (Left) --->
         <div class="slide-container-2-top"">
             <div class="box-text">
               <ul class="square-list">
@@ -96,6 +98,7 @@
               </ul>
             </div>
         </div>
+        <!--- Space Holder Box --->
         <div class="slide-container-2-bottom">Three</div>
 </div>
 
