@@ -40,29 +40,27 @@
 
 <style>
 /*Slide Container*/
-.slide-container-2 {
+.slide-container {
     width:     100%;
     height:    100%;
     display:   flex;
     flex-wrap: wrap; /*line break the boxes*/
 }
-/*Settings for divisions inside of container*/
-.slide-container-2>* {
-        flex: 1 1 45%; /*grow shrink basis*/
-}
+
 /*Gap between every other box*/
-.slide-container-2>* + *  { 
+.slide-container>* + *  { 
         margin-left: 20px;
 }
 /*Settings for top boxes*/
 .slide-container-2-top {
-    border: 2px solid grey;
-    height:80%;
+    flex: 1 1 45%; 
+    height:78%;
 }
 /*Settings for bottom boxes*/
 .slide-container-2-bottom {
-    background-color:red; 
-    height:20%;
+    flex: 1 1 45%; 
+    height:22%;
+    background-color:red;
 }
 /*Settings for Inside (Text) boxes*/
 .box-text {
@@ -76,21 +74,27 @@
 .box-img {
   margin: 10px;
   height: 100%;
-  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center, center;
+  background-size:contain;
+}
+/*Optional grey frame border*/
+.frame {
+  border: 2px solid grey;
 }
 </style>
 
-<div class="slide-container-2">
+<div class="slide-container">
         <!--- Box No. 1 (Left) --->
-        <div class="slide-container-2-top">
-            <div class="box-img" style="background-image: url(img/apple_annotated.png)">
-            </div>
+        <div class="slide-container-2-top frame">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/apple_annotated.png);"></div>
         </div>
         <!--- Box No. 2 (Left) --->
-        <div class="slide-container-2-top"">
+        <div class="slide-container-2-top frame">
+            <!--- TEXT --->
             <div class="box-text">
+              <!--- List (unordered) --->
               <ul class="square-list">
                 <li>1</li>
                 <li>2</li>
@@ -99,7 +103,7 @@
             </div>
         </div>
         <!--- Space Holder Box --->
-        <div class="slide-container-2-bottom">Three</div>
+        <div class="slide-container-2-bottom"></div>
 </div>
 
 ----
@@ -108,49 +112,26 @@
 
 #### The five most valuable firms in the S&P 500 are all firms from the tech industry (with an especially rapid rise in this fraction in the last few years)
 
-<style>
-.flex-container1 {
-    display: flex;
-    height:calc(100% - 250px);
-    width:100%;
-    background-color:red;
-}
-.flex-child1 {
-    flex:1; /*sizes the item based on its width/heigh */
-    border: 2px solid grey;
-    background-color:green;
-}  
-.flex-child1:first-child {
-    margin-right: 20px;
-} 
-#imgtest {
-  width: 80%;
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-}
-/*li { color: #2dc6d6; }*/
-/*li span { color: white; } */
-</style>
-<div class="flex-container1">
-  <div class="flex-child1 magenta">
-    <div id="imgtest" class="column divtest">
-    <div style="background: url(img/nasdaq.png) no-repeat center center;
-                    height: 100%; 
-                    width:100%; 
-                    padding-top:750px;
-                    background-size: 650px;">
-  </div>
-  </div>
-  </div>
-  <div class="flex-child1 green">
-   <ul>
-    <li><span>It’s become a truism that corporations must invest in <b>leading-edge digital technologies</b> to move ahead and outpace competitors.</span></li>
-    <li><span>The five <b>most valuable firms</b> in the S&P 500 are all firms from the <b>tech industry</b> (with an especially rapid rise in this fraction in the last few years).</span></li>
-    <li><span>As the economy becomes increasingly digitized, these assets can be expected to grow even further in importance.</span></li>
-  </ul>
-  </div>
+<div class="slide-container">
+        <!--- Box No. 1 (Left) --->
+        <div class="slide-container-2-top frame">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/nasdaq.png);"></div>
+        </div>
+        <!--- Box No. 2 (Left) --->
+        <div class="slide-container-2-top frame">
+            <!--- TEXT --->
+            <div class="box-text">
+              <!--- List (unordered) --->
+              <ul class="square-list">
+                <li>It’s become a truism that corporations must invest in <b>leading-edge digital technologies</b> to move ahead and outpace competitors.</li>
+                <li>The five <b>most valuable firms</b> in the S&P 500 are all firms from the <b>tech industry</b> (with an especially rapid rise in this fraction in the last few years).</li>
+                <li>As the economy becomes increasingly digitized, these assets can be expected to grow even further in importance.</li>
+              </ul>
+            </div>
+        </div>
+        <!--- Space Holder Box --->
+        <div class="slide-container-2-bottom"></div>
 </div>
 
 ----
@@ -159,73 +140,57 @@
 
 #### Much of the rise in the concentration of power in these firms has been attributed to investments related to digital technologies
 
-<style>
-.flex-container {
-    display: flex;
-    width:100%;
-    height:70%;
-}
-.flex-child {
-    flex: 1;
-    border: 2px solid grey;
-    padding:20px;
-    
-}  
-.flex-child:first-child {
-    margin-right: 20px;
-} 
-#imgtest {
-  width: 80%;
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-}
-/*li { color: #2dc6d6; }*/
-/*li span { color: white; } */
-</style>
-<div class="flex-container">
-  <div class="flex-child magenta">
-    <div id="imgtest" class="column divtest">
-    <div style="background: url(img/apple_annotated.png) no-repeat center center;
-                    height: 100%; 
-                    width:100%; 
-                    padding-top:750px;
-                    background-size: 650px;">
-  </div>
-  </div>
-  </div>
-  <div class="flex-child green">
-   <ul>
-    <li>
-      <span>Superstar firms, unique in their capabilities to scale up innovations, have become increasingly important in the US economy.</span>
-      <p class="reference">(Autor et al., 2020; Hall, 2018; Van Reenen, 2018; De Loecker et al., 2020)</p>
-    </li>
-    <li><span>The five <b>most valuable firms</b> in the S&P 500 are all firms from the <b>tech industry</b> (with an especially rapid rise in this fraction in the last few years).</span></li>
-    <li><span>As the economy becomes increasingly digitized, these assets can be expected to grow even further in importance.</span></li>
-    <li><span>Goal: Predict future firm-level productivity with digital capital accumulation</span></li>
-  </ul>
-  </div>
+<div class="slide-container">
+        <!--- Box No. 1 (Left) --->
+        <div class="slide-container-2-top frame">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/apple_annotated.png);"></div>
+        </div>
+        <!--- Box No. 2 (Left) --->
+        <div class="slide-container-2-top frame">
+            <!--- TEXT --->
+            <div class="box-text">
+              <!--- List (unordered) --->
+              <ul class="square-list">
+                <li>Superstar firms, unique in their capabilities to scale up innovations, have become increasingly important in the US economy.
+                <p class="reference">(Autor et al., 2020; Hall, 2018; Van Reenen, 2018; De Loecker et al., 2020)</p></li>
+                <li>The five <b>most valuable firms</b> in the S&P 500 are all firms from the <b>tech industry</b> (with an especially rapid rise in this fraction in the last few years).</li>
+                <li>As the economy becomes increasingly digitized, these assets can be expected to grow even further in importance.</li>
+              </ul>
+            </div>
+        </div>
+        <!--- Space Holder Box --->
+        <div class="slide-container-2-bottom"></div>
 </div>
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-#### Digital laggards pay the consequences in lost revenue and customers
+#### Digital laggards pay the consequences in lost revenue and customers. Let's make this everything a two lone title
 
 <style>
-.wrapper2 {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  height:700px;
+/*Settings for top boxes*/
+.slide-container-1-top {
+    flex: 1 0 100%;
+    height:78%;
+    width:100%;
+}
+/*Settings for bottom boxes*/
+.slide-container-1-bottom {
+    flex: 1 0 100%;
+    height:22%;
+    background-color:red;
 }
 </style>
-<div class="wrapper2">
-    <img src="img/bei.png" >
-    <figcaption style="text-align:center;">Beiersdorf</figcaption>
-<div>
+
+<div class="slide-container">
+        <!--- Box No. 1 (Left) --->
+        <div class="slide-container-1-top">
+        <div class="box-img" style="background-image: url(img/bei.png);"></div>
+        </div>
+        <div class="slide-container-1-bottom"</div>
+</div>
 
 ----
 
@@ -266,7 +231,12 @@
   </ul>
   </div>
 </div>
-
+/*.wrapper2 {*/
+/*display: flex;*/
+/*flex-direction: column;*/
+/*align-self: center;*/
+/*height:700px;*/
+/*}*/
 ----
 
 <!-- .slide: class="align-top" -->
