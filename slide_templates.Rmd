@@ -90,3 +90,13 @@
         <!--- Space Holder Box --->
         <div class="slide-container-2-bottom">Three</div>
 </div>
+
+
+----
+#imgtest {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}

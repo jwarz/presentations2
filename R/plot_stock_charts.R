@@ -1,6 +1,9 @@
 library(tidyverse)
 library(tidyquant)
 
+# 4. Add images to plot ----
+svg_to_rG <- function(path) { rasterGrob( image_read_svg(path, width = 400) , interpolate=TRUE) }
+
 # NASDAQ ##################################################################
 # 1. Get data -------------------------------------------------------------
 nasdaq_data <- tq_get("^IXIC", from = "2000-01-01", to = "2021-02-11")
@@ -13,7 +16,27 @@ nasdaq_g <- nasdaq_data %>%
               scale_y_continuous(breaks = seq(0, 14000, by = 2000), 
                                  labels = function(x) format(x, big.mark = ".", scientific = FALSE)) +
               labs(x = "", y = "") 
-nasdaq_g_themed <- nasdaq_g +
+
+# 2.1 Add logos
+amz_lg_rg  <- svg_to_rG(path = "R/data_raw/stock_charts/logo_amz.svg")
+aapl_lg_rg  <- svg_to_rG(path = "R/data_raw/stock_charts/logo_aapl.svg")
+fb_lg_rg  <- svg_to_rG(path = "R/data_raw/stock_charts/logo_fb.svg")
+msft_lg_rg  <- svg_to_rG(path = "R/data_raw/stock_charts/logo_msft.svg")
+gogl_lg_rg  <- svg_to_rG(path = "R/data_raw/stock_charts/logo_gogl.svg")
+
+## 2.2. Add Images to plot ----
+# apple_g_comb <-
+nasdaq_g_comb <- nasdaq_g + 
+  
+  ### 2.2.1. AMZ (2001) ----
+  annotation_custom(amz_lg_rg,  xmin = as.Date("2002-06-01"), xmax = as.Date("2006-06-01"), ymin = 2000, ymax = 5000) +
+  annotation_custom(fb_lg_rg,   xmin = as.Date("2006-06-01"), xmax = as.Date("2010-06-01"), ymin = 4000, ymax = 7000) +
+  annotation_custom(msft_lg_rg, xmin = as.Date("2010-06-01"), xmax = as.Date("2014-06-01"), ymin = 6000, ymax = 9000) +
+  annotation_custom(gogl_lg_rg, xmin = as.Date("2014-06-01"), xmax = as.Date("2017-06-01"), ymin = 8000, ymax = 11000) +
+  annotation_custom(aapl_lg_rg, xmin = as.Date("2016-06-01"), xmax = as.Date("2019-06-01"), ymin = 11000, ymax = 13000) 
+
+
+nasdaq_g_themed <- nasdaq_g_comb +
                     theme(
                       panel.background = element_rect(fill = "transparent"), 
                       plot.background  = element_rect(fill = "transparent", color = NA),
@@ -67,8 +90,7 @@ apple_g <- apple_data_mc %>%
                theme(plot.margin = unit(c(1,4.5,1,1), "cm")) +
                coord_cartesian(clip = 'off')
 
-# 4. Add images to plot ----
-svg_to_rG <- function(path) { rasterGrob( image_read_svg(path, width = 400) , interpolate=TRUE) }
+
 
 ## 4.1. Load Images ----
 ipod_rg    <- svg_to_rG(path = "R/data_raw/stock_charts/ipod.svg")
@@ -132,17 +154,22 @@ ggsave(apple_g_themed, filename = "img/apple_annotated.png",  bg = "transparent"
 # BEI ---------------------------------------------------------------------
 # NASDAQ ##################################################################
 # 1. Get data -------------------------------------------------------------
-bei_data <- tq_get("BEI.DE", from = "2020-06-01", to = "2021-02-17")
+bei_data <- tq_get("BEI.DE", from = "2020-07-02", to = "2021-02-17")
 
 # 2. Plot Data ------------------------------------------------------------
+img_dimi <- png::readPNG(system.file("img", "img/dimi.png", package="png"))
+
 bei_g <- bei_data %>% 
   ggplot(aes(x = date, y = adjusted)) +
   geom_line(color = "#2dc6d6",  size = 1) +
   tidyquant::theme_tq() +
-  scale_y_continuous(breaks = seq(0, 14000, by = 2000), 
+  scale_y_continuous(breaks = seq(0, 120, by = 10), 
                      labels = function(x) format(x, big.mark = ".", scientific = FALSE)) +
-  labs(x = "", y = "") 
-nasdaq_g_themed <- nasdaq_g +
+  labs(x = "", y = "") +
+  expand_limits(y = 80) +
+  annotate(geom = "segment",    x    = as.Date("2021-02-16"), y = 91.4, xend = as.Date("2021-02-16"), yend = 83.4, color = "#2dc6d6", size = 1) +
+  annotation_raster(img_dimi,   xmin = as.Date("2020-10-01"), xmax = as.Date("2020-12-10"), ymin = 80, ymax = 88) 
+bei_g_themed <- bei_g +
   theme(
     panel.background = element_rect(fill = "transparent"), 
     plot.background  = element_rect(fill = "transparent", color = NA),
@@ -152,7 +179,7 @@ nasdaq_g_themed <- nasdaq_g +
     axis.text.y      = element_text(color  = "white", size = 20, hjust = -1.5, face = "bold"),
     axis.line        = element_line(colour = "grey",  size = 0.3)
   )
-ggsave(nasdaq_g_themed, filename = "img/nasdaq.png",  bg = "transparent", width = 12, height = 10)
+ggsave(bei_g_themed, filename = "img/bei.png",  bg = "transparent", width = 12, height = 10)
 
 
 
