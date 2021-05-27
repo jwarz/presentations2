@@ -605,6 +605,109 @@
         <div class="slide-container-bottom"></div>
 </div>
 
+----
+
+<!-- .slide: class="align-top" -->
+
+#### RELATED Work
+
+<div class="slide-container">
+  <div class="slide-container-top">
+  Overview to related works that address the reconstruction of social networks from software repositories (studies that construct graphs or networks where nodes capture developers while links capture social interactions and/or work dependencies between developers):
+  <br>
+  <br>
+  * using data on direct developer communication, e.g. via
+    * IRC channels
+    * E-Mail exchanges
+    * mailing lists,
+    * communication via issue trackers<br>
+  --> Issue: often not available due to privacy concerns
+  * infer or reconstruct collaboration networks based on developer actions recorded in code repositories like CVS, SVN or git (Version Control Systems) --> code authorship / code ownership networks<br> 
+    * mapping relation between a developer and the artefacts (i.e. files, modules, binaries, etc.) that he/she contributed to
+    * --> Co-authorship networks (devs have modified at least one common artefact / module / project part)
+    * --> Co-commit networks (devs have commited the same file / to the same project at least once)
+  * --> Issues: undirected co-authorships networks based on joint contributions to files, modules or projects<br>
+  * Potential Issues: They do not distinguish between 
+      (i)  links between developers that are due to <i>independent</i> contributions to the same artefact
+      (ii) links that are due to commit sequences where one developer builds upon and/or redacts the particular lines of source code previously authored by another developer.
+      -->Networks defined based on time-ordered co-editing of code regions are likely associated with a stronger need for coordination and communication than the mere fact that developers edited the same file or module (citation_43). Just a few studies have adopted such a fine-grained approach. 
+      
+      Need:
+      (I)  requires a detailed analysis of file modifications
+      (II) identify the original author for every modified line of code affected in each commit
+  </div>
+  <div class="slide-container-bottom"></div>
+</div>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### TESTTEST1
+
+<div class="slide-container">
+  <div class="slide-container-top" style="background-image: url(img/04_methods/coedit_network.svg);
+                                          background-repeat: no-repeat;
+                                          background-position: center, center;
+                                          background-size:70%;"></div>
+  <div class="slide-container-bottom"></div>
+</div>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Code Block
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <pre><code class="r"># Number of roles (for accounts with github account)
+al_profiles_joined %>% 
+  filter(!is.na(github_url)) %>% 
+  count(role, sort = T)
+## # A tibble: 8 x 2
+##   role               n
+##   &lt;chr&gt;          &lt;int&gt;
+## 1 employee      635775
+## 2 founder        57728
+## 3 past_investor  17821
+## 4 advisor         6569
+## 5 board_member    2585
+## 6 incubator       1630
+## 7 mentor           455
+## 8 attorney         262
+&nbsp;
+# Distinct profiles with github account
+al_profiles_joined %>% 
+  filter(!is.na(github_url)) %>% 
+  distinct(github_url) %>% 
+  count()
+## 267133
+</code></pre>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### TESTTEST
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <!--- IFrAME --->
+          <iframe src="coediting_network.html" width="100%" height="100%">asd</iframe>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
 ----  ----
 
 <!-- .slide: class="align-center" -->
